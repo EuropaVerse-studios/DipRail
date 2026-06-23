@@ -1,0 +1,7 @@
+[configuration]
+entry_symbol = "rail_library_init"
+compatibility_minimum = "4.1"
+reloadable = true
+
+[libraries]
+windows.debug.x86_64 = "res://cpp_extensions/bin/diprail_railgen.dll"

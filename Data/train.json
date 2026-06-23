@@ -1,0 +1,7 @@
+{
+  "name": "E.444",
+  "mass": 80000,
+  "maxPower": 4200000,
+  "maxBrakeForce": 200000,
+  "maxSpeed": 55.5
+}

@@ -1,0 +1,13 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+#VSCode specific ignores
+.vscode/
+
+#DipRail specific ignores
+old-stuff/
+Materials/
+Builds/
+assets/
+Texture/

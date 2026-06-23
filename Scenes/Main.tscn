@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://deg1pihsu4gaj"]
+
+[ext_resource type="Script" uid="uid://ckmxb5ciddaui" path="res://Scripts/track_builder.gd" id="2_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://cvck3x2v5ixfw" path="res://Scenes/PlayerTrain.tscn" id="2_v1gob"]
+[ext_resource type="Script" uid="uid://bn8nfrp51ag1p" path="res://Scripts/camera_switcher.gd" id="4_v1gob"]
+[ext_resource type="Script" uid="uid://c5rrmogbt2hl" path="res://Scripts/orbit_camera.gd" id="5_jw32o"]
+[ext_resource type="Script" uid="uid://bchrx26nfqty" path="res://Scripts/cab_camera.gd" id="6_50glp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbw6q"]
+albedo_color = Color(0.14915964, 0.18821508, 0.10768702, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_x3fao"]
+material = SubResource("StandardMaterial3D_pbw6q")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5l328"]
+sky_top_color = Color(0.30391622, 0.45660532, 0.65181214, 1)
+sky_horizon_color = Color(0.46233135, 0.67465764, 0.88677794, 1)
+
+[sub_resource type="Sky" id="Sky_1ij55"]
+sky_material = SubResource("ProceduralSkyMaterial_5l328")
+
+[sub_resource type="Environment" id="Environment_x3fao"]
+background_mode = 2
+sky = SubResource("Sky_1ij55")
+
+[node name="Main" type="Node3D" unique_id=1932946191]
+
+[node name="World" type="Node3D" parent="." unique_id=706391185]
+
+[node name="TrackPath" type="Path3D" parent="World" unique_id=739710482]
+
+[node name="TrackMesh" type="MeshInstance3D" parent="World/TrackPath" unique_id=249750457]
+
+[node name="RailsContainer" type="MeshInstance3D" parent="World/TrackPath/TrackMesh" unique_id=968547473]
+
+[node name="SleepersMultiMesh" type="MultiMeshInstance3D" parent="World/TrackPath/TrackMesh" unique_id=646933499]
+
+[node name="BallastMesh" type="MeshInstance3D" parent="World/TrackPath/TrackMesh" unique_id=2054741872]
+
+[node name="TrainPathFollow" type="PathFollow3D" parent="World/TrackPath" unique_id=2028428569]
+transform = Transform3D(0.99941945, 0, 0.03407082, 0, 1, 0, -0.03407082, 0, 0.99941945, 335.43912, 0, 604.56006)
+
+[node name="PlayerTrain" parent="World/TrackPath/TrainPathFollow" unique_id=803772809 instance=ExtResource("2_v1gob")]
+
+[node name="TrackBuilder" type="Node3D" parent="World/TrackPath" unique_id=2130754983]
+script = ExtResource("2_pbw6q")
+metadata/_custom_type_script = "uid://ckmxb5ciddaui"
+
+[node name="Terrain" type="MeshInstance3D" parent="World" unique_id=241180696]
+transform = Transform3D(900, 0, 0, 0, 1, 0, 0, 0, 900, 0, 0, 0)
+mesh = SubResource("PlaneMesh_x3fao")
+
+[node name="Sun" type="DirectionalLight3D" parent="World" unique_id=1368421524]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 54.340477, 0)
+shadow_enabled = true
+shadow_bias = 3.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=1494125262]
+environment = SubResource("Environment_x3fao")
+
+[node name="Trains" type="Node3D" parent="." unique_id=920811314]
+
+[node name="Cameras" type="Node3D" parent="." unique_id=344973527]
+script = ExtResource("4_v1gob")
+
+[node name="ExternalCamera" type="Camera3D" parent="Cameras" unique_id=1704469264 node_paths=PackedStringArray("target")]
+current = true
+script = ExtResource("5_jw32o")
+target = NodePath("../../World/TrackPath/TrainPathFollow/PlayerTrain")
+
+[node name="CabCamera" type="Camera3D" parent="Cameras" unique_id=2081587036 node_paths=PackedStringArray("target")]
+script = ExtResource("6_50glp")
+target = NodePath("../../World/TrackPath/TrainPathFollow/PlayerTrain/CabView")
+
+[node name="GameManager" type="Node" parent="." unique_id=243061539]
+
+[editable path="World/TrackPath/TrainPathFollow/PlayerTrain"]

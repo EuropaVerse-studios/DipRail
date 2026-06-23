@@ -1,0 +1,23 @@
+{
+  "tracks": [
+    {
+      "name": "main",
+      "start": { "x": 0, "y": 5.0, "z": 0 },
+      "startDirection": 0,
+      "segments": [
+        { "type": "straight", "length": 50, "grade": 0.5 },
+        { "type": "easement", "length": 40, "radiusStart": 0, "radiusEnd": 500, "grade": 0.5 },
+        { "type": "curve", "radius": 500, "angle": 30, "grade": 0.5 },
+        { "type": "easement", "length": 40, "radiusStart": 500, "radiusEnd": 0, "grade": 0.5 },
+        { "type": "straight", "length": 80, "grade": -0.3 },
+        { "type": "straight", "length": 60, "tunnel": true, "grade": -0.3 },
+        { "type": "curve", "radius": 400, "angle": -20, "grade": 0.0 },
+        { "type": "straight", "length": 100, "grade": 0.8 },
+        { "type": "easement", "length": 30, "radiusStart": 0, "radiusEnd": 300, "grade": 0.8 },
+        { "type": "curve", "radius": 300, "angle": 15, "grade": 0.8 },
+        { "type": "easement", "length": 30, "radiusStart": 300, "radiusEnd": 0, "grade": 0.8 },
+        { "type": "straight", "length": 70, "grade": 0.0 }
+      ]
+    }
+  ]
+}

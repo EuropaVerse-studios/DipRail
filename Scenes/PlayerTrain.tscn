@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cvck3x2v5ixfw"]
+
+[ext_resource type="Script" uid="uid://dk2c12ew2lbu4" path="res://Scripts/train_controller.gd" id="1_wvmwx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x3fao"]
+
+[node name="PlayerTrain" type="CharacterBody3D" unique_id=803772809]
+script = ExtResource("1_wvmwx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1989171028]
+transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 6, 0, 0.9, 0)
+mesh = SubResource("BoxMesh_x3fao")
+
+[node name="CabView" type="Marker3D" parent="." unique_id=1528841287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3)
