@@ -1,0 +1,2 @@
+Temporary and unstable C++ modules added in the CppExt_DevCode folder. this code will soon be removed and replaced because of it's instability. 
+Please mind that GDExtension C++ code is subject to frequent changes.
