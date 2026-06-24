@@ -41,6 +41,7 @@ sky = SubResource("Sky_1ij55")
 transform = Transform3D(0.99941945, 0, 0.03407082, 0, 1, 0, -0.03407082, 0, 0.99941945, 335.43912, 0, 604.56006)
 
 [node name="PlayerTrain" parent="World/TrackPath/TrainPathFollow" unique_id=803772809 instance=ExtResource("2_v1gob")]
+height_above_rail = 1.0
 
 [node name="TrackBuilder" type="Node3D" parent="World/TrackPath" unique_id=2130754983]
 script = ExtResource("2_pbw6q")
@@ -51,7 +52,7 @@ transform = Transform3D(900, 0, 0, 0, 1, 0, 0, 0, 900, 0, 0, 0)
 mesh = SubResource("PlaneMesh_x3fao")
 
 [node name="Sun" type="DirectionalLight3D" parent="World" unique_id=1368421524]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 54.340477, 0)
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 60, 0)
 shadow_enabled = true
 shadow_bias = 3.0
 
