@@ -2,21 +2,27 @@
   "tracks": [
     {
       "name": "main",
-      "start": { "x": 0, "y": 5.0, "z": 0 },
+      "start": { "x": 0, "y": 0.45, "z": 0 },
       "startDirection": 0,
       "segments": [
-        { "type": "straight", "length": 50, "grade": 0.5 },
-        { "type": "easement", "length": 40, "radiusStart": 0, "radiusEnd": 500, "grade": 0.5 },
-        { "type": "curve", "radius": 500, "angle": 30, "grade": 0.5 },
-        { "type": "easement", "length": 40, "radiusStart": 500, "radiusEnd": 0, "grade": 0.5 },
-        { "type": "straight", "length": 80, "grade": -0.3 },
-        { "type": "straight", "length": 60, "tunnel": true, "grade": -0.3 },
-        { "type": "curve", "radius": 400, "angle": -20, "grade": 0.0 },
-        { "type": "straight", "length": 100, "grade": 0.8 },
-        { "type": "easement", "length": 30, "radiusStart": 0, "radiusEnd": 300, "grade": 0.8 },
-        { "type": "curve", "radius": 300, "angle": 15, "grade": 0.8 },
-        { "type": "easement", "length": 30, "radiusStart": 300, "radiusEnd": 0, "grade": 0.8 },
-        { "type": "straight", "length": 70, "grade": 0.0 }
+        { "type": "straight", "length": 200 },
+        { "type": "easement", "length": 80, "radiusStart": 0, "radiusEnd": 1200 },
+        { "type": "curve", "radius": 1200, "angle": 30 },
+        { "type": "easement", "length": 80, "radiusStart": 1200, "radiusEnd": 0 },
+        { "type": "straight", "length": 300, "grade": 0.5 },
+        { "type": "easement", "length": 60, "radiusStart": 0, "radiusEnd": 900 },
+        { "type": "curve", "radius": 900, "angle": -25 },
+        { "type": "easement", "length": 60, "radiusStart": 900, "radiusEnd": 0 },
+        { "type": "straight", "length": 150, "grade": -0.3 },
+        { "type": "straight", "length": 200, "grade": 0.0, "tunnel": true },
+        { "type": "easement", "length": 70, "radiusStart": 0, "radiusEnd": 800 },
+        { "type": "curve", "radius": 800, "angle": 20 },
+        { "type": "easement", "length": 70, "radiusStart": 800, "radiusEnd": 0 },
+        { "type": "straight", "length": 400, "grade": 0.8 },
+        { "type": "easement", "length": 50, "radiusStart": 0, "radiusEnd": 600 },
+        { "type": "curve", "radius": 600, "angle": -15 },
+        { "type": "easement", "length": 50, "radiusStart": 600, "radiusEnd": 0 },
+        { "type": "straight", "length": 250, "grade": -0.5 }
       ]
     }
   ]
