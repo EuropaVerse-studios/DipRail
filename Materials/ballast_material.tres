@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://df6wrhc48ct2o"]
+
+[ext_resource type="Texture2D" uid="uid://cfqrl1ib02nxx" path="res://Texture/Tracks/Rocks/Rocks006_1K-JPG_Color.jpg" id="1_m4qih"]
+[ext_resource type="Texture2D" uid="uid://ynlfke0rvk45" path="res://Texture/Tracks/Rocks/Rocks006_1K-JPG_NormalGL.jpg" id="2_vuxsv"]
+[ext_resource type="Texture2D" uid="uid://vvamniu4i82" path="res://Texture/Tracks/Rocks/Rocks006_1K-JPG_Roughness.jpg" id="3_plg17"]
+
+[resource]
+albedo_color = Color(0.4, 0.38, 0.35, 1)
+albedo_texture = ExtResource("1_m4qih")
+roughness_texture = ExtResource("3_plg17")
+normal_enabled = true
+normal_texture = ExtResource("2_vuxsv")
+params_cull_mode = 2

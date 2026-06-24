@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chmm6k0a3qo30"]
+
+[resource]
+resource_name = "Track_Rust"
+cull_mode = 2
+albedo_color = Color(0.28761062, 0.124716125, 0.124716125, 1)
+metallic = 0.884615
+roughness = 0.7179878

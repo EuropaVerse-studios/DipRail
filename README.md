@@ -70,32 +70,32 @@ See Data/Tracks/test_line.json for a full example and RAILTRACK_FORMAT.md
 for the complete specification.
 
 ## 🚂 Modding
-Trains: JSON files in Data/ define power, mass, braking, etc.
+- Trains: JSON files in Data/ define power, mass, braking, etc.
 
-Routes: JSON track files as described above.
+- Routes: JSON track files as described above.
 
-3D Models: any .glb model can be used for tracks or trains.
+- 3D Models: any .glb model can be used for tracks or trains.
 
-Scripts: GDScript files can be added to extend behaviour (signals, AI).
+- Scripts: GDScript files can be added to extend behaviour (signals, AI).
 
 ## 🗺️ Roadmap
-Procedural track generation (JSON‑based)
+- Procedural track generation (JSON‑based)
 
-Basic train physics and controls
+- Basic train physics and controls
 
-Orbit and cab cameras
+- Orbit and cab cameras
 
-3D track model generated via Blender
+- 3D track model generated via Blender
 
-Signaling system
+- Signaling system
 
-Multiplayer (via EOS)
+- Multiplayer (via EOS)
 
-Weather and day/night cycle
+- Weather and day/night cycle
 
-Steam Deck support
+- Steam Deck support
 
-Visual track editor
+- Visual track editor
 
 ## 📜 License
 DipRail is licensed under the GNU General Public License v3.0.

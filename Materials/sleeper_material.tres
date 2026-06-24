@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://r67e102lj8kv"]
+
+[ext_resource type="Texture2D" uid="uid://ctq5onodmgt1t" path="res://Texture/Tracks/Concrete/Concrete042A_1K-JPG_Color.jpg" id="1_es06q"]
+[ext_resource type="Texture2D" uid="uid://c2pqvwkxyw3c2" path="res://Texture/Tracks/Concrete/Concrete042A_1K-JPG_Metalness.jpg" id="2_xuwyy"]
+[ext_resource type="Texture2D" uid="uid://dp62802ffecl3" path="res://Texture/Tracks/Concrete/Concrete042A_1K-JPG_NormalGL.jpg" id="3_4txem"]
+[ext_resource type="Texture2D" uid="uid://dghd40cwqlei7" path="res://Texture/Tracks/Concrete/Concrete042A_1K-JPG_Roughness.jpg" id="4_6qaq7"]
+
+[resource]
+albedo_color = Color(0.3, 0.18, 0.1, 1)
+albedo_texture = ExtResource("1_es06q")
+metallic = 1.0
+metallic_texture = ExtResource("2_xuwyy")
+roughness_texture = ExtResource("4_6qaq7")
+normal_enabled = true
+normal_texture = ExtResource("3_4txem")
+params_cull_mode = 2

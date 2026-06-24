@@ -1,40 +1,79 @@
-#DipRail specific ignores
-old-stuff/
-Materials/
-Builds/
-assets/
-Texture/
-Tools/
+# ==================================
+# DipRail – Godot 4.7 project
+# ==================================
 
-# Godot 4+ specific ignores
+# ----------------------------------
+# Godot 4+ generated / cache
+# ----------------------------------
 .godot/
 *.import
 *.tmp
 *.bak
 *.log
-/android/
+*.uid
+*.godot_editor
 
-# Export
+# ----------------------------------
+# Build & export
+# ----------------------------------
 export/
 build/
+Builds/
+release/
 
-# Android
+# ----------------------------------
+# Platform specific
+# ----------------------------------
 .android/
 .godot/android/
-
-# iOS
 .godot/ios/
-
-# macOS
+.godot/web/
 .DS_Store
-
-# Windows
 Thumbs.db
+desktop.ini
 
-# Mono (if you removed C#)
+# ----------------------------------
+# IDE / Editor
+# ----------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ----------------------------------
+# Mono / C# 
+# ----------------------------------
 *.csproj
 *.sln
 *.mono/
+.mono/
 
-#VSCode specific ignores
-.vscode/
+# ----------------------------------
+# Rust and C++
+# ----------------------------------
+diprail_rust/
+cpp_extensions/
+target/
+
+# ----------------------------------
+# Blender backups
+# ----------------------------------
+*.blend1
+*.blend2
+
+# ----------------------------------
+# Python cache
+# ----------------------------------
+__pycache__/
+*.pyc
+
+# ----------------------------------
+# Old or not used stuff
+# ----------------------------------
+old-stuff/
+Texture/
+
+# ----------------------------------
+# DipRail specific ignores
+# ----------------------------------
+.glb
