@@ -21,6 +21,7 @@ func _ready():
 	for p in points:
 		curve.add_point(p)
 	curve.bake_interval = sample_interval
+	var _baked = curve.get_baked_length()   # forza il baking
 	path_node.curve = curve
 
 	generate_all(points)
@@ -50,18 +51,22 @@ func generate_all(points: PackedVector3Array):
 		printerr("Nessuna mesh trovata nel GLB.")
 		return
 
-	# Applica i materiali PBR (prima di usare il MultiMesh)
-	var rail_mat = load("res://Materials/rail_material.tres") as Material
+	# ==========================================
+	# APPLICAZIONE MATERIALI PBR (5 SLOT)
+	# ==========================================
+	var silver_mat = load("res://Materials/Track_Silver.tres") as Material
+	var rail_mat   = load("res://Materials/rail_material.tres") as Material
 	var sleeper_mat = load("res://Materials/sleeper_material.tres") as Material
 	var ballast_mat = load("res://Materials/ballast_material.tres") as Material
-	if rail_mat:
-		mesh.surface_set_material(0, rail_mat)
-	if sleeper_mat:
-		mesh.surface_set_material(1, sleeper_mat)
-	if ballast_mat:
-		mesh.surface_set_material(2, ballast_mat)
+	var earth_mat   = load("res://Materials/earth_material.tres") as Material
 
-	# Crea il MultiMesh
+	if silver_mat: mesh.surface_set_material(0, silver_mat)
+	if rail_mat:   mesh.surface_set_material(1, rail_mat)
+	if sleeper_mat: mesh.surface_set_material(2, sleeper_mat)
+	if ballast_mat: mesh.surface_set_material(3, ballast_mat)
+	if earth_mat:   mesh.surface_set_material(4, earth_mat)
+	# ==========================================
+
 	var mm = MultiMesh.new()
 	mm.transform_format = MultiMesh.TRANSFORM_3D
 	mm.mesh = mesh
@@ -80,8 +85,8 @@ func generate_all(points: PackedVector3Array):
 		var up = Vector3.UP
 		var right = tangent.cross(up).normalized()
 		up = right.cross(tangent).normalized()
-		var basis = Basis(right, up, tangent)
-		mm.set_instance_transform(i, Transform3D(basis, pos))
+		var segment_basis = Basis(right, up, tangent)
+		mm.set_instance_transform(i, Transform3D(segment_basis, pos))
 		dist += segment_length
 
 	var mmi = MultiMeshInstance3D.new()
@@ -111,7 +116,7 @@ func _tangent_at_distance(points: PackedVector3Array, dist: float) -> Vector3:
 	return (points[-1] - points[-2]).normalized() if points.size() > 1 else Vector3.FORWARD
 
 # ----------------------------------------------------------------------
-# CARICAMENTO JSON (identico a prima)
+# CARICAMENTO JSON
 # ----------------------------------------------------------------------
 func load_and_generate_points(file_path: String) -> PackedVector3Array:
 	var file = FileAccess.open(file_path, FileAccess.READ)
