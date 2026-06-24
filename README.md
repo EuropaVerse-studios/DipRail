@@ -54,18 +54,18 @@ We welcome translations and English contributions – see [Contributing](#-contr
 
 Tracks are defined by JSON files with a list of segments. Example:
 
-```json
-{
-  "start": { "x": 0, "y": 0.6, "z": 0 },
-  "startDirection": 0,
-  "segments": [
-    { "type": "straight", "length": 200 },
-    { "type": "easement", "length": 80, "radiusStart": 0, "radiusEnd": 1200 },
-    { "type": "curve", "radius": 1200, "angle": 30 },
-    { "type": "easement", "length": 80, "radiusStart": 1200, "radiusEnd": 0 },
-    { "type": "straight", "length": 300, "grade": 0.5 }
-  ]
-}
+    {
+      "start": { "x": 0, "y": 0.6, "z": 0 },
+      "startDirection": 0,
+      "segments": [
+        { "type": "straight", "length": 200 },
+        { "type": "easement", "length": 80, "radiusStart": 0, "radiusEnd": 1200 },
+        { "type": "curve", "radius": 1200, "angle": 30 },
+        { "type": "easement", "length": 80, "radiusStart": 1200, "radiusEnd": 0 },
+        { "type": "straight", "length": 300, "grade": 0.5 }
+      ]
+    }
+
 See Data/Tracks/test_line.json for a full example and RAILTRACK_FORMAT.md
 for the complete specification.
 
