@@ -1,10 +1,3 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
-
-#VSCode specific ignores
-.vscode/
-
 #DipRail specific ignores
 old-stuff/
 Materials/
@@ -12,3 +5,36 @@ Builds/
 assets/
 Texture/
 Tools/
+
+# Godot 4+ specific ignores
+.godot/
+*.import
+*.tmp
+*.bak
+*.log
+/android/
+
+# Export
+export/
+build/
+
+# Android
+.android/
+.godot/android/
+
+# iOS
+.godot/ios/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Mono (if you removed C#)
+*.csproj
+*.sln
+*.mono/
+
+#VSCode specific ignores
+.vscode/
